@@ -1,3 +1,6 @@
+@import 'variables';
+@import 'themes';
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -13,8 +16,9 @@ body {
 }
 
 body {
-  color: #1f2937;
-  background: #ffffff;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-family: $font-family-base;
 }
 
 a {
@@ -23,11 +27,11 @@ a {
 }
 
 button {
-  font-family: inherit;
+  font-family: $font-family-base;
 }
 
 input {
-  font-family: inherit;
+  font-family: $font-family-base;
 }
 
 /* RTL Support */
@@ -37,7 +41,7 @@ input {
 
 /* Focus styles for accessibility */
 *:focus {
-  outline: 2px solid #3b82f6;
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 

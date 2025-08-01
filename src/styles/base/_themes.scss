@@ -1,0 +1,40 @@
+@import 'variables';
+
+// Light Theme (default)
+:root {
+  --color-primary: #{$color-primary};
+  --color-primary-hover: #{$color-primary-hover};
+  --color-primary-active: #{$color-primary-active};
+  --color-secondary: #{$color-secondary};
+  --color-secondary-hover: #{$color-secondary-hover};
+  --color-secondary-active: #{$color-secondary-active};
+  --color-error: #{$color-error};
+  --color-error-hover: #{$color-error-hover};
+  --color-error-active: #{$color-error-active};
+  --color-background: #{$color-white};
+  --color-background-dark: #{$color-neutral-100};
+  --color-text: #{$color-neutral-600};
+  --color-text: #{$color-neutral-600};
+  --color-text-light: #{$color-neutral-400};
+  --color-text-secondary: #{$color-neutral-400};
+  --color-border: #{$color-neutral-200};
+}
+
+// Dark Theme
+[data-theme='dark'] {
+  --color-primary: #{$color-primary};
+  --color-primary-hover: #{$color-primary-hover};
+  --color-primary-active: #{$color-primary-active};
+  --color-secondary: #{$color-neutral-600};
+  --color-secondary-hover: #{$color-neutral-500};
+  --color-secondary-active: #{$color-neutral-400};
+  --color-error: #{$color-error};
+  --color-error-hover: #{$color-error-hover};
+  --color-error-active: #{$color-error-active};
+  --color-background: #{$color-neutral-600};
+  --color-background-dark: #{$color-neutral-400};
+  --color-text: #{$color-white};
+  --color-text-light: #{$color-neutral-200};
+  --color-text-secondary: #{$color-neutral-100};
+  --color-border: #{$color-neutral-400};
+}

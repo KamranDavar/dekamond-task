@@ -1,22 +1,26 @@
+@import '@/styles/base/variables';
+@import '@/styles/base/mixins';
+@import '@/styles/base/utilities';
+
 .container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  padding: 2rem;
+  background: linear-gradient(135deg, $color-neutral-50 0%, #c3cfe2 100%);
+  @extend .p-xl;
 
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
-    background: white;
-    padding: 1.5rem 2rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    @extend .mb-xl;
+    background: var(--color-background);
+    padding: $space-lg $space-xl;
+    border-radius: $radius-md;
+    @include shadow(sm);
 
     .title {
-      font-size: 1.875rem;
-      font-weight: 700;
-      color: #1f2937;
+      @extend .text-3xl;
+      @extend .font-bold;
+      color: var(--color-text);
       margin: 0;
     }
   }
@@ -26,14 +30,14 @@
     margin: 0 auto;
 
     .welcomeCard {
-      background: white;
-      padding: 2rem;
-      border-radius: 0.75rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      background: var(--color-background);
+      @extend .p-xl;
+      border-radius: $radius-md;
+      @include shadow(sm);
       display: flex;
       align-items: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
+      @extend .gap-xl;
+      @extend .mb-xl;
 
       .avatar {
         flex-shrink: 0;
@@ -41,9 +45,9 @@
         .avatarImage {
           width: 100px;
           height: 100px;
-          border-radius: 50%;
+          border-radius: $radius-full;
           object-fit: cover;
-          border: 4px solid #e5e7eb;
+          border: 4px solid var(--color-border);
         }
       }
 
@@ -51,25 +55,25 @@
         flex: 1;
 
         .userName {
-          font-size: 1.5rem;
-          font-weight: 600;
-          color: #1f2937;
-          margin-bottom: 0.5rem;
+          @extend .text-2xl;
+          @extend .font-semibold;
+          color: var(--color-text);
+          @extend .mb-sm;
         }
 
         .userEmail {
-          color: #6b7280;
-          margin-bottom: 0.25rem;
+          color: var(--color-text-secondary);
+          @extend .mb-xs;
         }
 
         .userPhone {
-          color: #6b7280;
-          margin-bottom: 0.25rem;
+          color: var(--color-text-secondary);
+          @extend .mb-xs;
         }
 
         .username {
-          color: #3b82f6;
-          font-weight: 500;
+          color: var(--color-primary);
+          @extend .font-medium;
         }
       }
     }
@@ -77,28 +81,28 @@
     .statsGrid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      @extend .gap-lg;
 
       .statCard {
-        background: white;
-        padding: 1.5rem;
-        border-radius: 0.75rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        text-align: center;
+        background: var(--color-background);
+        @extend .p-lg;
+        border-radius: $radius-md;
+        @include shadow(sm);
+        @extend .text-center;
 
         h3 {
-          font-size: 0.875rem;
-          font-weight: 600;
-          color: #6b7280;
-          margin-bottom: 0.5rem;
+          @extend .text-sm;
+          @extend .font-semibold;
+          color: var(--color-text-secondary);
+          @extend .mb-sm;
           text-transform: uppercase;
           letter-spacing: 0.05em;
         }
 
         .statValue {
-          font-size: 1.25rem;
-          font-weight: 700;
-          color: #1f2937;
+          @extend .text-xl;
+          @extend .font-bold;
+          color: var(--color-text);
         }
       }
     }
@@ -111,12 +115,12 @@
     min-height: 100vh;
 
     .spinner {
-      width: 3rem;
-      height: 3rem;
-      border: 4px solid #e5e7eb;
-      border-top: 4px solid #3b82f6;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
+      width: $space-2xl;
+      height: $space-2xl;
+      border: 4px solid var(--color-border);
+      border-top: 4px solid var(--color-primary);
+      border-radius: $radius-full;
+      animation: spin $animation-duration $animation-timing infinite;
     }
   }
 }
@@ -127,11 +131,11 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 1rem;
+    padding: $space-md;
 
     .header {
       flex-direction: column;
-      gap: 1rem;
+      gap: $space-md;
       text-align: center;
     }
 

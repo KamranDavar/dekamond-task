@@ -1,0 +1,43 @@
+@import 'variables';
+
+// Margin utilities
+@each $key, $spacing in $spacings {
+  .m-#{$key} { margin: $spacing; }
+  .mx-#{$key} { margin-left: $spacing; margin-right: $spacing; }
+  .my-#{$key} { margin-top: $spacing; margin-bottom: $spacing; }
+  .mt-#{$key} { margin-top: $spacing; }
+  .mr-#{$key} { margin-right: $spacing; }
+  .mb-#{$key} { margin-bottom: $spacing; }
+  .ml-#{$key} { margin-left: $spacing; }
+}
+
+// Padding utilities
+@each $key, $spacing in $spacings {
+  .p-#{$key} { padding: $spacing; }
+  .px-#{$key} { padding-left: $spacing; padding-right: $spacing; }
+  .py-#{$key} { padding-top: $spacing; padding-bottom: $spacing; }
+  .pt-#{$key} { padding-top: $spacing; }
+  .pr-#{$key} { padding-right: $spacing; }
+  .pb-#{$key} { padding-bottom: $spacing; }
+  .pl-#{$key} { padding-left: $spacing; }
+}
+
+// Text alignment
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+// Font sizes
+@each $size, $value in (xs: $font-size-xs, sm: $font-size-sm, base: $font-size-base, lg: $font-size-lg, xl: $font-size-xl, 2xl: $font-size-2xl, 3xl: $font-size-3xl) {
+  .text-#{$size} { font-size: $value; }
+}
+
+// Font weights
+@each $weight, $value in (regular: $font-weight-regular, medium: $font-weight-medium, semibold: $font-weight-semibold, bold: $font-weight-bold) {
+  .font-#{$weight} { font-weight: $value; }
+}
+
+// Gap utilities
+@each $key, $spacing in $spacings {
+  .gap-#{$key} { gap: $spacing; }
+}

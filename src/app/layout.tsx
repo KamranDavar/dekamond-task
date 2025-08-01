@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { AuthProvider } from '@/contexts/AuthContext';
-import './globals.css';
+import '../styles/styles.scss';
 import { Vazirmatn } from 'next/font/google'
 
 export const metadata: Metadata = {
@@ -18,7 +18,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fa" dir="rtl" className={vazirFont.className}>
+    <html lang="fa" dir="rtl" className={vazirFont.className}
+    data-theme="dark"
+    >
       <body>
         <AuthProvider>
           {children}

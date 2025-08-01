@@ -1,0 +1,39 @@
+@import 'variables';
+
+// Button styles
+@mixin button-variant($bg, $color, $hover-bg, $active-bg) {
+  background-color: $bg;
+  color: $color;
+  transition: background-color $transition-duration $transition-timing;
+
+  &:hover:not(:disabled) {
+    background-color: $hover-bg;
+  }
+
+  &:active:not(:disabled) {
+    background-color: $active-bg;
+  }
+}
+
+@mixin button-size($padding-y, $padding-x, $font-size) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+}
+
+// Responsive typography
+@mixin fluid-type($min-size, $max-size, $min-vw: 320px, $max-vw: 1200px) {
+  font-size: clamp(#{$min-size}, calc(#{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw}))), #{$max-size});
+}
+
+// Shadow
+@mixin shadow($type: sm) {
+  @if $type == sm {
+    box-shadow: $shadow-sm;
+  } @else if $type == md {
+    box-shadow: $shadow-md;
+  } @else if $type == lg {
+    box-shadow: $shadow-lg;
+  } @else if $type == error {
+    box-shadow: $shadow-error;
+  }
+}

@@ -19,13 +19,13 @@ const LoginForm: React.FC = () => {
   const {
     control,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<LoginSchemaType>({
     resolver: yupResolver(loginSchema),
     defaultValues: {
       phone: '',
     },
-    mode: 'onChange',
+    mode: 'onSubmit',
   });
 
   const onSubmit = async (data: LoginSchemaType) => {
@@ -69,9 +69,9 @@ const LoginForm: React.FC = () => {
 
       <Button 
         type="submit" 
-        size="lg" 
+        size="md" 
         loading={isLoading}
-        disabled={!isValid || isLoading}
+        disabled={isLoading}
         className={styles.submitButton}
       >
         {isLoading ? 'در حال ورود...' : 'ورود'}
